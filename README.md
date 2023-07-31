@@ -1,2 +1,2 @@
-A compliation of programming problems written in python.
+A compilation of programming problems solutions written in python.
 
