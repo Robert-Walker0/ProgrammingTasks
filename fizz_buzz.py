@@ -16,6 +16,4 @@ def main():
     for i in range(0, 1000 + 1):
         fizz_buzz(i)
 
-#main()
-
-fizz_buzz(0)
+main()
