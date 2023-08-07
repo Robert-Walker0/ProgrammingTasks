@@ -1,0 +1,101 @@
+/* File Name: main.cpp 
+Author: Robert Walker
+Created On: 9/6/21 12:36 p.m.
+Last Modified: 8/6/23 6:50 p.m.
+Description: A program that sings about 99 drinks on the wall to the user.
+Text Description: Convert to cpp by turning the text file extension into a c++
+file or copy the code into another file.
+*/
+
+#include <iostream>
+#include <map>
+
+
+class Application
+{
+public:
+	void GetInput();
+	void PrintOptions() const;
+	void SetDrink();
+	void Sing() const;
+private:
+	int selection;
+	std::map<int, std::string> drinks{{1, "Water"}, {2, "Beer"}, {3, "Milk"}, {4, "Soda"}};
+	std::string drink;
+};
+
+void Application::PrintOptions() const
+{
+	for (auto const& x : drinks)
+	{
+		std::cout << x.first << ". " << x.second << std::endl;
+	}
+}
+
+void Application::GetInput()
+{
+	std::cout << "What drink would you like to choose for the song?" << std::endl;
+	std::cout << "> ";
+	std::cin >> selection;
+}
+
+void Application::SetDrink()
+{
+	switch (selection) {
+	case 1:
+		drink = "water";
+		break;
+	case 2:
+		drink = "beer";
+		break;
+	case 3:
+		drink = "milk";
+		break;
+	case 4:
+		drink = "soda";
+		break;
+	default:
+		drink = "shit";
+		break;
+	}
+}
+
+void Application::Sing() const 
+{
+	for (int count = 99; count > 1; count--) {
+
+		std::cout << count << " bottles of " << drink << " on the wall!" << std::endl;
+		std::cout << count << " bottles of " << drink << "!" << std::endl;
+		std::cout << "You take one down, pass it around." << std::endl;
+		std::cout << count - 1 << " bottles of " << drink << " on the wall." << "\n\n";
+	}
+
+	std::cout << "1 bottle of " << drink << " on the wall!" << std::endl;
+	std::cout << "1 bottle of " << drink << "!" << std::endl;
+	std::cout << "You take on down, pass it around." << std::endl;
+	std::cout << "No more bottles of " << drink << " on the wall." << std::endl;
+	std::cout << "Go to the store and buy some more, 99 bottles of " << drink << " on the wall...\n\n";
+}
+
+void PlayGame(Application& a)
+{
+	a.PrintOptions();
+	a.GetInput();
+	a.SetDrink();
+	a.Sing();
+}
+
+int main()
+{
+	//bottlesOnTheWall();
+	Application app = Application();
+	PlayGame(app);
+	system("PAUSE");
+	return 0;
+}
+
+void bottlesOnTheWall() 
+{
+	//Sings the song
+	
+}
