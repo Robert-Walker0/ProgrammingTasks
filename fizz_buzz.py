@@ -16,4 +16,6 @@ def main():
     for i in range(0, 1000 + 1):
         fizz_buzz(i)
 
+    input("Press Enter to exit...")
+
 main()

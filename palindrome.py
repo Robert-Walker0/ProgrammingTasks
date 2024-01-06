@@ -17,6 +17,8 @@ def main():
     else:
         print(is_palindrome(word))
 
+    input("Press Enter to exit...")
+
 main()
 
 
