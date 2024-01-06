@@ -7,11 +7,11 @@ OVERWEIGHT = (25, 29.9)
 OBESITY = 30
 
 def get_bmi_category(BMI):
-    if BMI >= 0 and BMI < 18.5:
+    if BMI >= UNDERWEIGHT[0] and BMI < UNDERWEIGHT[1]:
         return "Underweight"
-    elif BMI >= 18.5 and BMI <= 24.99:
+    elif BMI >= NORMAL[0] and BMI <= NORMAL[1]:
         return "Normal"
-    elif BMI >= 25 and BMI <= 29.9:
+    elif BMI >= OVERWEIGHT[0] and BMI <= OVERWEIGHT[1]:
         return "Overweight"
     else:
         return "Obese"
@@ -32,6 +32,7 @@ def main():
     bmi = calculate_bmi(feet, inches, weight)
     print(f"Your BMI is {bmi:.2f}")
     print(f"You are {get_bmi_category(bmi)}")
+    input("Press Enter to exit...")
 
 main()
 
